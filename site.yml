@@ -24,7 +24,10 @@
 #    args:
 #      chdir: ./repo
   
-  - name: Start server
-    shell: java -jar target/*.jar --server.port=8082
+#  - name: Start server
+#    shell: java -jar target/*.jar --server.port=8082
 #    args:
 #      chdir: ./repo
+
+  - name: scp
+    shell: sshpass -p 'ubuntu' scp ./target/spring-petclinic-3.1.0-SNAPSHOT.jar root@172.17.0.3:/
