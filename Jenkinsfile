@@ -9,13 +9,17 @@ pipeline {
     
     stage('Build') {
       steps {
-        sh './spring-petclinic/mvnw package'
+        dir('spring-petclinic') {
+          sh './spring-petclinic/mvnw package'
+        }
       }
     }
 
     stage('Ansible') {
       steps {
-        sh 'ansible-playbook -i hosts spring-petclinic/site.yml'
+        dir('spring-petclinic') {
+          sh 'ansible-playbook -i hosts site.yml'
+        }
       }
     }
 
