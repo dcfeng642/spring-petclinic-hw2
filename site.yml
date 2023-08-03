@@ -19,8 +19,8 @@
 #      dest: ./repo
 #      clone: yes
       
-  - name: Build project
-    shell: ./mvnw package -DskipTests
+#  - name: Build project
+#    shell: ./mvnw package -DskipTests
 #    args:
 #      chdir: ./repo
   
