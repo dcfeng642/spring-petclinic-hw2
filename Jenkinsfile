@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         dir('spring-petclinic') {
-          sh './spring-petclinic/mvnw package'
+          sh './mvnw package'
         }
       }
     }
