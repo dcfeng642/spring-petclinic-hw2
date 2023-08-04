@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Build app') {
       steps {
         dir('spring-petclinic') {
           sh './mvnw package'
@@ -21,5 +21,13 @@ pipeline {
       }
     }
 
+   stage('Reset build env') {
+      steps {
+        dir('spring-petclinic') {
+          deleteDir()
+        }
+      }
+    }
+    
   }
 }
