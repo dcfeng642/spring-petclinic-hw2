@@ -7,12 +7,6 @@ pipeline {
       }
     }
 
-    stage('Disp contents') {
-      steps {
-        sh 'ls'
-      }
-    }
-    
     stage('Build') {
       steps {
         dir('spring-petclinic') {
@@ -21,7 +15,7 @@ pipeline {
       }
     }
 
-    stage('Ansible') {
+    stage('Ansible for scp and run server') {
       steps {
         sh 'ansible-playbook -i hosts site.yml'
       }
