@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git clone') {
       steps {
-        sh 'git clone https://github.com/dcfeng642/spring-petclinic.git'
+        sh 'git clone https://github.com/spring-projects/spring-petclinic'
       }
     }
 
@@ -23,9 +23,7 @@ pipeline {
 
     stage('Ansible') {
       steps {
-        dir('spring-petclinic') {
-          sh 'ansible-playbook -i hosts site.yml'
-        }
+        sh 'ansible-playbook -i hosts site.yml'
       }
     }
 
