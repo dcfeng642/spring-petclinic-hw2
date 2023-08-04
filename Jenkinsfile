@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Git clone') {
+    stage('Git clone spring-petclinic') {
       steps {
         sh 'git clone https://github.com/spring-projects/spring-petclinic'
       }
