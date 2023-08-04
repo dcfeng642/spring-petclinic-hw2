@@ -18,7 +18,7 @@
     ignore_errors: true
     
   - name: ssh to send start server command
-    shell: sshpass -p 'ubuntu' ssh -o StrictHostKeyChecking=no root@172.17.0.3 'java /spring-petclinic-3.1.0-SNAPSHOT.jar --server.port=8082'
+    shell: sshpass -p 'ubuntu' ssh -o StrictHostKeyChecking=no root@172.17.0.3 'java -jar /spring-petclinic-3.1.0-SNAPSHOT.jar --server.port=8082'
     register: ps
     ignore_errors: true
 
